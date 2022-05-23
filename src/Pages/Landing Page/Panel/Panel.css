@@ -1,0 +1,8 @@
+.panel{
+    background-color: #020202;
+    margin: 0 auto 0 auto;
+    padding: 0.5rem;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-evenly;
+}

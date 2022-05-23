@@ -1,0 +1,25 @@
+.card{
+    width: 20vw;
+    height: auto;
+    border: 1px solid silver;
+    margin: 1rem;
+    transition: 0.2s transform;
+}
+
+.card:hover{
+    transform: scale(1.125);
+}
+
+.title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+}
+
+.image{
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.release{
+    color: aliceblue;
+}

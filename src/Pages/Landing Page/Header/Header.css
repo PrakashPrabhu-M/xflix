@@ -1,0 +1,10 @@
+#Header{
+    background-color: #020202;
+    height: 2.5vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#title{
+    color: aliceblue;
+}
