@@ -1,14 +1,17 @@
+// React
 import React from "react";
-import ResctDOM from "react-dom";
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
 
+// MUI
+import { Typography } from "@mui/material";
+
+// Local
 import Cointainer from "../Components/CardCointainer/Cointainer";
+
+// CSS
 import "./DashBoard.css";
 
 export default function DashBoard({ url, videos }) {
-  if (!videos) return <h1>Loading...</h1>;
+  if (!videos) return <Typography variant="h2">Loading...</Typography>;
   return <Cointainer items={videos} />;
 }
 
