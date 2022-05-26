@@ -13,6 +13,7 @@ import { config } from "../../App";
 
 // MUI
 import Stack from "@mui/material/Stack";
+import { TextField } from "@mui/material";
 
 const disp = {
   categories: ["All", "Education", "Sports", "Comedy", "Lifestyle"],
@@ -25,7 +26,7 @@ const COLORS = { category: "secondary", age: "secondary", sort: "primary" };
 function LandingPage() {
   const [data, setData] = useState(false);
   const [ALL_DATA, setAllData] = useState([]);
-  // console.log(ALL_DATA);
+  const [value, setValue] = useState("");
 
   function searchHandler(str) {
     // const req = ALL_DATA.filter((vdo) => {
@@ -34,6 +35,7 @@ function LandingPage() {
     //   return title.includes(str);
     // });
     // setData(req);
+    setValue(str);
     let req;
     if (str.length !== 0) req = "/v1/videos?title=" + str;
     else req = "/v1/videos";
@@ -41,9 +43,7 @@ function LandingPage() {
   }
 
   function sortHandler(str) {
-    // /v1/videos?sortBy=viewCount
     let req = "/v1/videos";
-
     function toCamelCase(str) {
       str = str.toLowerCase();
       for (let i = 1; i < str.length - 1; i++)
@@ -98,7 +98,15 @@ function LandingPage() {
 
   return (
     <Stack spacing={1}>
-      <Header search={searchHandler} />
+      <Header search={searchHandler} >
+      <TextField
+          label="Search"
+          type="search"
+          sx={{width:'20vw'}}
+          value={value}
+          onChange={(e)=>searchHandler(e.target.value)}
+        />
+      </Header>
       <Panel
         filters={disp}
         genre={genreHandler}
